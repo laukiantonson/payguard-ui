@@ -6,6 +6,7 @@ import { guard } from "@/lib/guard";
 import { useView } from "@/lib/use-guard";
 import { signAndSend } from "@/lib/wallet";
 import { cn } from "@/lib/utils";
+import { FirstVisitGuide } from "@/components/guide";
 
 // Mirrors initialize() in contract/policy.ts: canonical ids, every role distinct.
 const ACCOUNT_RE = /^(([a-z\d]+[-_])*[a-z\d]+\.)*([a-z\d]+[-_])*[a-z\d]+$/;
@@ -37,6 +38,7 @@ export default function Setup() {
 
   return (
     <div className="space-y-6">
+      <FirstVisitGuide />
       <div>
         <h1 className="text-2xl font-semibold">Set up your guard</h1>
         <p className="text-muted-foreground">Four accounts, each with one job. Nothing here can be bypassed later by the agent.</p>

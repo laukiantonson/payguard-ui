@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ShieldCheck, Settings2, Gauge, Users, Siren, Wallet } from "lucide-react";
 import { Badge, Button } from "./ui";
+import { StartHereHint } from "./guide";
 import { guard } from "@/lib/guard";
 import { cn } from "@/lib/utils";
 
@@ -51,6 +52,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
             <Wallet /> Connect wallet
           </Button>
         </header>
+        <StartHereHint onSetup={path === "/"} />
         <main className="mx-auto max-w-5xl p-6">{children}</main>
       </div>
     </div>
